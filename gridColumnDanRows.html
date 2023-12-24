@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Column & Rows</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 40px auto;
+            text-align: center;
+            display: grid;
+        }
+        .item {
+            background-color: aqua;
+        }
+        .item:nth-child(even) {
+            background-color: coral;
+        }
+        .satu {
+            grid-template-columns: 100px 25% auto; /* mengatur 3 colom */
+            grid-template-rows: 50px 50% 100px; /* mengatur 3 baris */
+        }
+        .dua {
+            grid-template-columns: 3fr 2fr 1fr; /* (dipakai biar responsif, selain pake %) */
+        }
+        .tiga {
+            /* repeat dipakai untuk mengatur column/row secara berulang
+            contoh dibawah mengatur 3 column sebesar 100px dan 2 row 50px 1 row 20px */
+            grid-template-columns: repeat(3, 100px); 
+            grid-template-rows: repeat(2, 50px) repeat(1,20px);
+        }
+        .empat {
+            /* max content akan mengukur kalimat berapapun panjangnya
+            min konten akan mengukur kata terpanjang */
+            grid-template-columns: min-content max-content 1fr;
+        }
+        .lima {
+            /* Menentukan jumlah item untuk berapa pada baris track (fit berada diakhir item)
+            (fill bila masih ada ruang untuk disi maka batas akhirnya di ruang kosong tersebut) */
+            grid-template-columns: repeat(auto-fill, 50px);
+            /* grid-template-columns: repeat(auto-fit, 50px); */
+        }
+        .enam {
+            grid-template-columns:  1fr minmax(200px, 300px) 1fr;
+        }
+    </style>
+</head>
+<body>
+    <div class="container satu">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+    <br>
+    <div class="container dua">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+    <div class="container tiga">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+    <div class="container empat">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">Muhammad Dandri Handian</div>
+        <div class="item">6</div>
+        <div class="item">Muhammad Dandri Handian</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+    <div class="container lima">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div>
+    <div class="container enam">
+        <div class="item">Muhammad</div>
+        <div class="item">Dandri</div>
+        <div class="item">handian</div>
+</body>
+</html>

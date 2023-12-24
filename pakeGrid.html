@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pake Grid</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: aliceblue;
+            color: white;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: grid;
+            grid-template-areas: "header header"
+                                 "aside main"
+                                 "navbar main"
+                                 "footer footer";
+            grid-template-columns: 1fr 1.5fr;
+            grid-template-rows: 2fr 6.5fr 8fr 1fr;
+        }
+        header {
+            background-color: blueviolet;
+            grid-area: header;
+        }
+        .aside{
+            background-color: aqua;
+            grid-area: aside;
+        }
+        .navbar {
+            background-color: coral;
+            grid-area: navbar;
+        }
+        .main {
+            background-color: chartreuse;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1.5;
+            grid-area: main;
+        }
+        footer {
+            background-color: grey;
+            grid-area: footer;
+        }
+
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <div class="aside">Aside</div>
+    <div class="navbar">Navbar</div>
+    <div class="main">Main</div>
+    <footer>Footer</footer>
+    
+</body>
+</html>

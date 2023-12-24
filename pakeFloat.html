@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pake Float</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: aliceblue;
+            color: white;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        header {
+            background-color: blueviolet;
+            height: 50px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .content {
+            box-sizing: border-box;
+        }
+        .aside, .navbar {
+            background-color: aqua;
+            height: 260px;
+            line-height: 220px;
+        }
+        .navbar {
+            background-color: coral;
+        }
+        .kiri {
+            float: left;
+            width: 40%;
+        }
+        .main {
+            background-color: chartreuse;
+            height: 520px;
+            line-height: 520px;
+        }
+        footer {
+            background-color: grey;
+        }
+
+    </style>
+</head>
+<body>
+    <header>Header</header>
+        <div class="kiri">
+            <div class="aside">Aside</div>
+            <div class="navbar">Navbar</div>
+        </div>
+        <div class="main">Main</div>
+    <footer>Footer</footer>
+    
+</body>
+</html>

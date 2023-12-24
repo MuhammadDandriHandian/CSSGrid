@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Aligment</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            border: solid black 3px;
+            padding: 3px;
+            display: grid;
+            grid-template: repeat(2, 130px)/repeat(3, 1fr);
+            grid-gap: 5px;
+        }
+        .item {
+            border: solid black 3px;
+            background-color: rgb(10, 255, 10);
+            height: 100px;
+        }
+        .l1, .l4 {
+            width: 50px;
+            height: 50px;
+        }
+        .l2, .l5 {
+            width: 65px;
+            height: 65px;
+        }
+        .l3, .l6 {
+            width: 100px;
+            height: 100px;
+        }
+        img {
+            width: 100%;
+        }
+        .satu {
+            /*justify-items : mensejajarkan sumbu horizontal
+              1. (defalt) item akan memenuhi grip, tapi karena item diberi widht maka tidak memenuhi
+              2. membuat item berada di sebelah kiri, bila tidak diberi width maka panjangnya menyesuaikan item
+              3. sama seperti start, item berada di kanan
+              4. sama seperti end, item berada di tengah*/
+            /* justify-items: stretch;  */
+            /* justify-items: start; */
+            /* justify-items: end; */
+            justify-items: center;
+        }
+        .dua {
+            /* align-items : mensejajarkan sumbu vertical
+            1. (default) item akan memenuhi grip bila height tidak diatur
+            2. item akan berada diatas, bila tidak diberi height makan tinggi akan menyesuaikan item
+            3. sama seperti start, item akan dibawah
+            4. sama seperti end, item akan di tengah */
+            /* align-items: stretch; */
+            /* align-items: start ; */
+            align-items: end;            
+            /* align-items: center;             */
+        }
+        .tiga {
+            /* menyatukan justify-items dan align-items, penulisan(align, justify)
+               bila justify dan alignnya sama makan cukup ditulis satu kali (center) */
+            place-items: end center;
+        }
+        .empat {
+            /* justify-content: mengatur seluruh posisi grid pada sumbu horizontal
+               bisa dilakukan jika ukuran total grid lebih kecil dari containernya
+               biasanya menggunakan ukuran yg fixed (px). contoh ada pada gambar */
+        }
+            /* align-content : sama seperti justify, namun mengatur posisi pada sumbu vertical
+               place-content: gabungan dari justify dan align. penulisan (justify align) */
+
+        @media (min-width:576px) {
+            .empat {
+                width: 80%;
+                border: solid black 3px;
+                margin: auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container satu">
+        <div class="item l1">1</div>
+        <div class="item l2">2</div>
+        <div class="item l3">3</div>
+        <div class="item l4">4</div>
+        <div class="item l5">5</div>
+        <div class="item l6">6</div>
+    </div>
+    <div class="container dua">
+        <div class="item l1">1</div>
+        <div class="item l2">2</div>
+        <div class="item l3">3</div>
+        <div class="item l4">4</div>
+        <div class="item l5">5</div>
+        <div class="item l6">6</div>
+    </div>
+    <div class="container tiga">
+        <div class="item l1">1</div>
+        <div class="item l2">2</div>
+        <div class="item l3">3</div>
+        <div class="item l4">4</div>
+        <div class="item l5">5</div>
+        <div class="item l6">6</div>
+    </div>
+    <div class="empat">
+        <img src="./assets/centerDanStrech.png" alt="">
+        <img src="./assets/startDanEnd.png" alt="">
+        <img src="./assets/spaceAroundDanSpaceBetween.png" alt="">
+        <img src="./assets/spaceEvenly.png" alt="" style="width: 50%;" class="bawah">
+    </div>
+</body>
+</html>
